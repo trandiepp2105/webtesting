@@ -1,0 +1,2 @@
+selenium==4.25.0
+python-dotenv # dev requirement(if using docker don't need to use it)
