@@ -18,7 +18,7 @@ Run docker compose
 From the project root directory run:
 
 ```
-docker-compose up --build
+docker-compose up --build -d
 ```
 
 ## 1.2. Using in virtualenv or local (Not Recommended)
@@ -45,12 +45,12 @@ docker exec webtesting "python ./main.py --test-case={test-case}"
 python ./main.py --test-case={test-case}
 ```
 
-- Command line parameter explanation:
+Command line parameter explanation:
 
-* --test-case: name of the test case you want to run
+- --test-case: name of the test case you want to run
 
-- List test case:
+List test case:
 
-* signup: Simulate user account registration steps
-* login: Simulate user login steps
-* product: Simulate user product browsing process
+- signup: Simulate user account registration steps
+- login: Simulate user login steps
+- product: Simulate user product browsing process
