@@ -9,7 +9,9 @@ This repository contains the base setup of an UI testing project, using Python, 
 Download or clone the repository
 
 ```
-git clone ...
+git clone https://github.com/trandiepp2105/webtesting.git
+cd webtesting
+
 ```
 
 Run docker compose
@@ -24,8 +26,8 @@ docker-compose up --build
 Download source code and install environment:
 
 ```
-git clone ...
-cd
+git clone https://github.com/trandiepp2105/webtesting.git
+cd webtesting
 pip install -r requirements.txt
 ```
 
