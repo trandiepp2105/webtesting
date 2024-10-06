@@ -11,7 +11,6 @@ Download or clone the repository
 ```
 git clone https://github.com/trandiepp2105/webtesting.git
 cd webtesting
-
 ```
 
 Run docker compose
@@ -36,7 +35,8 @@ pip install -r requirements.txt
 ## 2.1. Run in docker container.
 
 ```
-docker exec webtesting "python ./main.py --test-case={test-case}"
+<!-- docker exec webtesting "python ./main.py --test-case={test-case}" -->
+docker exec -it webtesting sh -c "python ./main.py --test-case={test-case}"
 ```
 
 ## 2.2. Run in local or virtualenv
@@ -53,4 +53,4 @@ List test case:
 
 - signup: Simulate user account registration steps
 - login: Simulate user login steps
-- product: Simulate user product browsing process
+- browse-products: Simulate user product browsing process

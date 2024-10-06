@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "4444:4444"
     command: ["tail", "-f", "/dev/null"]
     env_file:
       - ./.env

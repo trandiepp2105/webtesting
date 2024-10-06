@@ -1,6 +1,16 @@
-FROM python:3.12
+FROM selenium/standalone-edge
 
-WORKDIR /website-testing
+# Cài đặt Python
+# Chuyển sang người dùng root
+USER root
+
+# Xóa nội dung cũ
+RUN rm -rf /var/lib/apt/lists/*
+
+# Cập nhật và cài đặt Python
+RUN apt-get update && apt-get install -y python3 python3-pip
+
+WORKDIR /webtesting
 
 COPY requirements.txt ./
 
@@ -9,4 +19,4 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY ./ ./
 
-ENV PYTHONPATH=/backend
+ENV PYTHONPATH=/webtesting

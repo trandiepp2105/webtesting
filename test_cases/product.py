@@ -16,7 +16,7 @@ def product(driver, homepage_url):
     try:
         product_page.open(homepage_url, list_collections_name[0])
         product_page.goto_detail_product()
-        product_page.simulate_add_to_cart_action()
+        product_page.simulate_add_to_cart_action(scroll_down_quantity=10, scroll_up_quantity=7)
         product_page.close_gift_popup()
         time.sleep(1.5)
         product_page.click_view_cart_button()
