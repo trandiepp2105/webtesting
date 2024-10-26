@@ -182,7 +182,7 @@ class BasePage:
     def can_scroll_down(self):
         """Check if the page can scroll down further."""
         return self.driver.execute_script('return (window.innerHeight + window.scrollY) < document.body.scrollHeight')
-
+        
     def can_scroll_up(self):
         """Check if the page can scroll up further."""
         return self.driver.execute_script('return window.scrollY > 0')

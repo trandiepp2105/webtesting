@@ -39,10 +39,11 @@ class ProductPage(BasePage):
             
             self.hover_and_click(By.CSS_SELECTOR, f'a[title="{collection_name}"]')
 
+            time.sleep(5)
             window_size = self.driver.get_window_size()
 
             browser_height_center = math.ceil(window_size['height'] / 2)
-
+            
             for _ in range(scroll_quantity):
                 self.scroll_vertical_by_amount(browser_height_center)
                 time.sleep(1)
@@ -88,6 +89,12 @@ class ProductPage(BasePage):
         """
         if self.visible_products:
             last_product = self.visible_products[-1]
+
+            # Scroll the product into the center of the viewport
+            self.driver.execute_script("arguments[0].scrollIntoView({block: 'center', inline: 'center'});", last_product)
+
+            # Optional: Adjust further if needed
+            time.sleep(1)
             actions = ActionChains(self.driver)
             actions.move_to_element_with_offset(last_product, 50, 50).perform()
             time.sleep(2)
@@ -112,6 +119,7 @@ class ProductPage(BasePage):
         """
         for _ in range(scroll_down_quantity):
             if not self.can_scroll_down():  # Check if we can still scroll down
+                print("Cannot scroll down!")
                 break
             self.scroll_vertical_by_amount(200)
             time.sleep(0.2)
