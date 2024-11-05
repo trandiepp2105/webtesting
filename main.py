@@ -47,7 +47,7 @@ def main():
         if args.test_case == TestCase.SIGNUP.value:
             signup(driver, homepage_url)
         elif args.test_case == TestCase.LOGIN.value:
-            login(driver, homepage_url)
+            login(homepage_url)
         elif args.test_case == TestCase.BROWSE_PRODUCT.value:
             product(driver, homepage_url)
     else:

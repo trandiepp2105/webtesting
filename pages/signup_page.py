@@ -48,8 +48,10 @@ class SignupPage(BasePage):
                 if id == "gender":
                     if value == "Nam":
                         self.scroll_to_and_fill("radio2", value)
-                    else:
+                    elif value == "Nữ":
                         self.scroll_to_and_fill("radio1", value)
+                    else:
+                        continue
                 else:
                     self.scroll_to_and_fill(id, value)
             time.sleep(1)
